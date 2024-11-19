@@ -1,4 +1,4 @@
-
+// protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative  internal/pb/routeguide/routeguide.proto
 syntax = "proto3";
 
 option go_package = "test-grpc/internal/pb/routeguide";
@@ -21,14 +21,9 @@ service RouteGuide {
     rpc RouteChat(stream RouteNote) returns (stream RouteNote) {}
 }
 
-message default_message {
-  string app_status = 1;
-}
-
 message Point {
-  int32 x = 1;
+  int32 latitude = 1;
   int32 longitude = 2;
-  default_message dm = 3 
 }
 
 // A latitude-longitude rectangle, represented as two diagonally opposite

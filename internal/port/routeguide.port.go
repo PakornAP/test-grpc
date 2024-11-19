@@ -9,5 +9,5 @@ type RouteGuideServicePort interface {
 	GetFeature(point model.Point) (model.Feature, error)
 	ListFeatures(rectangle *routeguide.Rectangle, stream routeguide.RouteGuide_ListFeaturesServer) error
 	// RecordRoute()
-	// RouteChat()
+	RouteChat(stream routeguide.RouteGuide_RouteChatServer) error
 }

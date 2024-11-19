@@ -38,3 +38,10 @@ func (ra *RouteGuideGrpcAdapter) ListFeatures(rect *routeguide.Rectangle, stream
 	}
 	return nil
 }
+
+func (ra *RouteGuideGrpcAdapter) RouteChat(stream routeguide.RouteGuide_RouteChatServer) error {
+	if err := ra.Service.RouteChat(stream); err != nil {
+		return err
+	}
+	return nil
+}
